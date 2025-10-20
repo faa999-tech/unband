@@ -1,334 +1,377 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>UNBANNED WHATSAPP</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>FAA UNBAN WHATSAPP</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
-body{background:#000;color:#fff;padding:10px;display:flex;flex-direction:column;align-items:center;min-height:100vh;animation:fadeIn 1s}
-@keyframes fadeIn{from{opacity:0}to{opacity:1}}
-.c{max-width:450px;width:100%;text-align:center}
-.h{display:flex;justify-content:space-between;align-items:center;width:100%;margin-bottom:15px}
-.b{background:0;border:0;color:#fff;font-size:18px;cursor:pointer;padding:5px;transition:0.3s}
-.b:hover{transform:scale(1.1)}
-.t{font-size:13px;font-weight:600;text-align:center;flex-grow:1}
-.p{width:100px;height:100px;border-radius:50%;object-fit:cover;margin:8px 0 12px;border:2px solid #25D366;animation:pulse 2s infinite}
-@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,0.4)}70%{box-shadow:0 0 0 10px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
-.m{font-size:16px;margin-bottom:6px;font-weight:600}
-.s{font-size:11px;color:#aaa;margin-bottom:8px}
-.st{font-size:10px;color:#25D366;margin-bottom:4px}
-.f{margin-bottom:12px;text-align:left}
-.l{display:block;font-size:11px;margin-bottom:4px;color:#aaa}
-.i,.se{width:100%;padding:8px 10px;background:#111;border:1px solid #333;border-radius:5px;color:#fff;font-size:13px;transition:0.3s}
-.i:focus,.se:focus{border-color:#25D366;outline:none}
-.i::placeholder,.se option:first-child{color:#666}
-.btn{width:100%;padding:10px;background:#25D366;color:#000;border:0;border-radius:5px;font-size:13px;font-weight:600;cursor:pointer;margin-top:8px;transition:0.3s;animation:bounce 2s infinite}
-.btn:hover{background:#1da851;transform:translateY(-2px)}
-@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
-.md{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.9);z-index:1000;justify-content:center;align-items:center;animation:fadeIn 0.3s}
-.mc{background:#111;border-radius:8px;padding:15px;max-width:320px;width:90%;text-align:center;animation:slideUp 0.3s}
-@keyframes slideUp{from{transform:translateY(20px);opacity:0}to{transform:translateY(0);opacity:1}}
-.mt{font-size:15px;margin-bottom:10px;color:#25D366}
-.mp{margin-bottom:12px;font-size:11px}
-.mi{max-width:100%;border-radius:5px;margin-bottom:10px}
-.cb{background:#25D366;color:#000;border:0;padding:6px 12px;border-radius:4px;cursor:pointer;font-weight:600;margin-top:6px;transition:0.3s}
-.cb:hover{background:#1da851}
-.mn{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.95);z-index:1000;flex-direction:column;justify-content:center;align-items:center;animation:fadeIn 0.3s}
-.mi2{padding:10px 20px;font-size:14px;color:#fff;text-decoration:none;margin:6px 0;border-radius:5px;background:#111;width:80%;max-width:250px;text-align:center;cursor:pointer;transition:0.3s}
-.mi2:hover{background:#222;transform:translateX(5px)}
-.cm{position:absolute;top:12px;right:12px;font-size:20px;color:#fff;cursor:pointer}
-.ki{width:100%;padding:8px 10px;background:#111;border:1px solid #333;border-radius:5px;color:#fff;font-size:13px;margin-bottom:10px}
-.ks{width:100%;padding:8px;background:#25D366;color:#000;border:0;border-radius:5px;font-size:13px;font-weight:600;cursor:pointer}
-.lb{width:100%;height:16px;background:#333;border-radius:8px;margin:12px 0;overflow:hidden}
-.lp{height:100%;background:#25D366;border-radius:8px;width:0%;transition:0.5s}
+:root{
+  --bg-1:#071226;
+  --bg-2:#071733;
+  --accent:#06b6d4;
+  --accent-2:#14b8a6;
+  --muted:#94a3b8;
+  --radius:14px;
+  --max-w:520px;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial;color:#e6eef6;background:linear-gradient(180deg,var(--bg-1),var(--bg-2));-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+.app{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px;flex-direction:column;}
+
+/* Navbar */
+.navbar{
+  position:fixed;
+  top:14px;left:16px;
+  display:flex;align-items:center;gap:10px;
+  z-index:100;
+}
+.hamburger{
+  width:26px;height:20px;
+  display:flex;flex-direction:column;justify-content:space-between;
+  cursor:pointer;
+}
+.hamburger span{
+  display:block;width:100%;height:3px;background:var(--accent);border-radius:2px;transition:0.3s;
+}
+.brand-top{
+  font-weight:800;font-size:15px;letter-spacing:1px;color:var(--accent);
+}
+
+/* Menu dropdown */
+.menu{
+  position:fixed;
+  top:50px;left:16px;
+  background:rgba(7,18,38,0.95);
+  border:1px solid rgba(255,255,255,0.06);
+  border-radius:10px;
+  padding:10px;
+  display:none;
+  flex-direction:column;
+  gap:8px;
+  width:150px;
+  box-shadow:0 8px 30px rgba(0,0,0,.4);
+}
+.menu a{
+  color:#e6eef6;text-decoration:none;font-size:14px;padding:8px 10px;border-radius:8px;transition:0.25s;
+}
+.menu a:hover{background:rgba(255,255,255,0.05);color:var(--accent-2);}
+
+/* Splash / password */
+.splash{
+  width:100%;max-width:var(--max-w);
+  background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));
+  border-radius:var(--radius);
+  padding:28px;
+  box-shadow:0 12px 40px rgba(2,6,23,.6);
+  text-align:center;
+}
+.brand{font-weight:800;letter-spacing:1px;font-size:20px;margin-bottom:8px;color:var(--accent);}
+.splash p{color:var(--muted);margin:0 0 16px;font-size:14px;}
+.input-row{display:flex;gap:10px;margin-top:8px;align-items:center;justify-content:center;}
+.input-row input{
+  width:70%;
+  padding:12px 14px;
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,.04);
+  background:transparent;
+  color:inherit;
+  outline:none;
+  font-size:15px;
+  transition:0.3s all;
+}
+.input-row input:focus{border-color:var(--accent);box-shadow:0 0 8px rgba(6,182,212,.4);}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:12px 14px;
+  border-radius:10px;
+  border:none;
+  background:linear-gradient(90deg,var(--accent),var(--accent-2));
+  color:#042029;
+  font-weight:700;
+  cursor:pointer;
+  font-size:15px;
+  transition:0.25s transform,0.25s box-shadow;
+}
+.btn:hover{transform:scale(1.05);box-shadow:0 6px 20px rgba(6,182,212,.3);}
+.btn.ghost{background:transparent;color:var(--muted);border:1px solid rgba(255,255,255,.04);font-weight:600;}
+
+.container{
+  width:100%;
+  max-width:var(--max-w);
+  border-radius:var(--radius);
+  background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));
+  padding:18px;
+  box-shadow:0 12px 40px rgba(2,6,23,.6);
+  position:relative;
+  overflow:hidden;
+  margin-top:80px;
+}
+main.card{margin-top:8px;padding-top:10px;}
+h1.title{text-align:center;margin:0 0 8px;font-size:20px;}
+p.lead{text-align:center;margin:0 0 16px;color:var(--muted);font-size:14px;}
+.form{display:grid;gap:10px;}
+label{font-size:13px;color:var(--muted);margin-bottom:6px;}
+input[type="text"],select{
+  width:100%;padding:12px;
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,.04);
+  background:transparent;
+  color:inherit;
+  outline:none;
+  font-size:15px;
+  transition:0.3s all;
+}
+input[type="text"]:focus,select:focus{border-color:var(--accent);box-shadow:0 0 8px rgba(6,182,212,.4);}
+.row{display:flex;gap:10px;}
+.col{flex:1;}
+.note{font-size:13px;color:var(--muted);text-align:center;margin-top:12px;}
+.result{margin-top:10px;padding:10px;background:rgba(255,255,255,0.03);border-radius:10px;color:#f87171;font-size:13px;display:none;text-align:center;}
+.footer-box{
+  border-top:1px solid rgba(255,255,255,0.08);
+  margin-top:20px;
+  padding-top:10px;
+  color:#64748b;
+  font-size:12px;
+  text-align:center;
+}
+.buy-access{
+  margin-top:8px;
+  color:#0ef;
+  font-weight:600;
+  font-size:14px;
+  text-shadow:0 0 8px rgba(14,255,255,.4);
+}
+@media(max-width:520px){
+  .input-row input{width:65%;}
+}
 </style>
 </head>
 <body>
-<div class="c" id="mainPage">
-<div class="h">
-<button class="b" id="mBtn">☰</button>
-<div class="t">UNBANNED WHATSAPP BY FAASATURNN</div>
-</div>
-<img src="https://files.catbox.moe/ylq9t8.jpg" alt="Profile" class="p">
-<h1 class="m">UNBANN WHATSAPP BY MIVALDSATURNN</h1>
-<p class="s">MASUKKAN NOMOR WHATSAPP YANG TERBLOKIR</p>
-<div class="st">KLIK GARIS TIGA DIPOJOK KIRI ATAS</div>
-<div class="st">UNBANN BETA VERSION</div>
-<div class="f">
-<input type="text" class="i" placeholder="+628xxx" id="pInput">
-</div>
-<div class="f">
-<label class="l">PILIH OPSI</label>
-<select class="se" id="oSel">
-<option value="" disabled selected>PILIH SESUAI OPSI</option>
-<option value="1">PERMANEN FRESH</option>
-<option value="2">PERMANEN BATU</option>
-<option value="3">PERMANEN HARD</option>
-<option value="4">PERMANEN LUMUT</option>
-<option value="5">RESET OTP</option>
-</select>
-</div>
-<button class="btn" id="sBtn">KIRIM BANDING</button>
+<div class="app">
+
+<!-- Navbar muncul setelah login -->
+<div id="navbar" class="navbar" style="display:none;">
+  <div class="hamburger" id="menuBtn">
+    <span></span><span></span><span></span>
+  </div>
+  <div class="brand-top">FAA UNBAN WHATSAPP</div>
 </div>
 
-<div class="c" id="freePage" style="display:none">
-<div class="h">
-<button class="b" id="backBtn">←</button>
-<div class="t">FREE AKSES UNBAN</div>
-</div>
-<img src="https://files.catbox.moe/ylq9t8.jpg" alt="Profile" class="p">
-<h1 class="m">UNBAN VERSI GRATIS</h1>
-<p class="s">MASUKKAN NOMOR WHATSAPP YANG TERBLOKIR</p>
-<div class="f">
-<input type="text" class="i" placeholder="+628xxx" id="freeInput">
-</div>
-<div class="f">
-<label class="l">PILIH OPSI</label>
-<select class="se" id="freeSel" disabled>
-<option value="free" selected>UNBAN FREE</option>
-</select>
-</div>
-<button class="btn" id="freeBtn">KIRIM BANDING</button>
+<div id="menu" class="menu">
+  <a href="#" id="homeLink">🛠️ Unban Tool</a>
+  <a href="#" id="tipsLink">🛡️ Anti-Ban Tips</a>
 </div>
 
-<div class="mn" id="mMd">
-<div class="cm" id="cMBtn">×</div>
-<div class="mi2" id="cBtn">Contact Developer</div>
-<div class="mi2" id="bBtn">Buy Akses</div>
-<div class="mi2" id="sBtn2">Support</div>
-<div class="mi2" id="fBtn">Free Akses</div>
+<!-- Splash / password -->
+<div id="splash" class="splash" aria-hidden="false">
+  <div class="brand">FAA UNBAN WHATSAPP</div>
+  <p>Masukkan password untuk lanjut menggunakan website ini.</p>
+  <div style="display:flex;flex-direction:column;align-items:center;gap:10px;">
+    <div class="input-row">
+      <input id="passwordInput" type="password" placeholder="Masukkan password" aria-label="password">
+      <button id="pwBtn" class="btn">Masuk</button>
+    </div>
+    <div id="pwMsg" style="color:#f87171;font-size:13px;height:18px;"></div>
+  </div>
+  <div class="buy-access">Untuk beli akses password → DM Tele: @jagoanneo3</div>
+  <div class="footer-box">© 2025 Faa Developer. All rights reserved.</div>
 </div>
 
-<div class="md" id="kMd">
-<div class="mc">
-<h2 class="mt">MASUKKAN KEY</h2>
-<input type="text" class="ki" id="kInput" placeholder="Masukkan key akses">
-<button class="ks" id="sKey">SUBMIT</button>
-<div id="kMsg" style="margin-top:10px;font-size:11px"></div>
-</div>
+<!-- Main App -->
+<div id="homePage" class="container" style="display:none;">
+  <main class="card">
+    <h1 class="title">Form Unban WhatsApp</h1>
+    <p class="lead">Masukkan nama lengkap dan nomor WhatsApp Anda (format internasional), lalu pilih opsi banding.</p>
+    <form id="unbanForm" class="form" onsubmit="return false;">
+      <div>
+        <label for="name">Nama Lengkap Anda</label>
+        <input id="name" type="text" placeholder="Masukkan nama lengkap Anda di sini" required>
+      </div>
+      <div>
+        <label for="phone">Nomor WhatsApp (format internasional, contoh: +6281234567890)</label>
+        <input id="phone" type="text" inputmode="tel" placeholder="+6281234567890" autocomplete="tel" required>
+      </div>
+      <div>
+        <label for="bandOption">Pilih Opsi Banding</label>
+        <select id="bandOption">
+          <option value="permanen">Permanen</option>
+          <option value="sementara">Sementara</option>
+        </select>
+      </div>
+      <div class="row" style="margin-top:6px">
+        <div class="col"><button id="sendBtn" class="btn" type="button">Kirim Banding</button></div>
+        <div style="width:120px"><button id="clearBtn" class="btn ghost" type="button">Bersihkan</button></div>
+      </div>
+      <div id="feedback" class="result"></div>
+      <div class="note">
+        Setelah klik <strong>Kirim Banding</strong>, Anda akan otomatis diarahkan ke Gmail. 
+        Cukup tekan <strong>Send</strong> untuk mengirim.  
+        <br><br>
+        ⚠️ <em>Catatan:</em> Jika nomor WhatsApp yang Anda isi <strong>tidak sedang diblokir atau tidak terkena banned</strong>, 
+        maka pengajuan banding ini <strong>tidak akan berpengaruh apa pun</strong> meskipun email berhasil terkirim ke pihak WhatsApp.
+        <br><br>
+        🕒 <strong>Perlu diingat:</strong> Penggunaan website ini hanya bertujuan untuk <strong>membantu mempercepat proses unban WhatsApp dan meningkatkan peluang keberhasilan</strong>, 
+        <strong>bukan untuk menjamin 100% keberhasilan atau hasil yang instan</strong>. Keputusan akhir sepenuhnya berada di tangan <strong>pihak WhatsApp</strong>.
+      </div>
+    </form>
+    <div class="footer-box">© 2025 Faa Developer. All rights reserved.</div>
+  </main>
 </div>
 
-<div class="md" id="freeKeyMd">
-<div class="mc">
-<h2 class="mt">MASUKKAN KEY FREE AKSES</h2>
-<input type="text" class="ki" id="freeKeyInput" placeholder="Masukkan key free akses">
-<button class="ks" id="freeKeyBtn">SUBMIT</button>
-<div id="freeKeyMsg" style="margin-top:10px;font-size:11px"></div>
-</div>
+<!-- Tips Page -->
+<div id="tipsPage" class="container" style="display:none;">
+  <main class="card">
+    <h1 class="title">🛡️ Tips Aman agar WhatsApp Terhindar dari Banned</h1>
+<p class="lead">
+  Berikut beberapa tips penting agar akun WhatsApp Anda tidak mudah terkena banned dan tetap aman digunakan setiap hari:
+</p>
+
+<ul style="color:#cbd5e1;font-size:14px;line-height:1.6;">
+  <li>Gunakan <strong>aplikasi WhatsApp resmi</strong> yang diunduh dari <em>Google Play Store</em> atau <em>App Store</em>.</li>
+  <li>Hindari menggunakan <strong>aplikasi modifikasi</strong> seperti GBWhatsApp, FMWhatsApp, YoWhatsApp, dan sejenisnya.</li>
+  <li>Jangan kirim <strong>pesan massal</strong> atau <strong>broadcast</strong> ke banyak orang yang tidak menyimpan nomor Anda.</li>
+  <li>Hindari mengirim <strong>link mencurigakan</strong>, konten spam, atau pesan berulang yang bisa dianggap mengganggu.</li>
+  <li>Aktifkan fitur <strong>Verifikasi Dua Langkah</strong> untuk meningkatkan keamanan akun Anda.</li>
+  <li>Gunakan WhatsApp secara <strong>wajar dan sesuai ketentuan</strong> agar terhindar dari sistem deteksi pelanggaran.</li>
+</ul>
+
+<p style="color:#94a3b8;font-size:13px;margin-top:16px;">
+  Dengan mengikuti tips di atas, peluang akun Anda terkena banned akan jauh lebih kecil. Gunakan WhatsApp dengan bijak dan tetap aman.
+</p>
+
+<div class="footer-box">© 2025 Faa Developer. All rights reserved.</div>
+</main>
 </div>
 
-<div class="md" id="lMd">
-<div class="mc">
-<h2 class="mt">MENGIRIM BANDING</h2>
-<div class="lb">
-<div class="lp" id="lProg"></div>
-</div>
-<div id="lTxt" style="margin-top:8px;font-size:11px">Memproses... 0%</div>
-</div>
-</div>
 
-<div class="md" id="pMd">
-<div class="mc">
-<h2 class="mt">PEMBAYARAN</h2>
-<p class="mp">JIKA ANDA INGIN MEMBELI AKSES ANDA BISA MELAKUKAN PEMBAYARAN SEBESAR IDR 10.000</p>
-<p class="mp">DANA: 081259435726</p>
-<p class="mp">GOPAY: 081226541936</p>
-<img src="https://files.catbox.moe/orwja1.png" alt="QRIS" class="mi">
-<p class="mp">JANGAN LUPA SCREENSHOT BUKTI TF</p>
-<button class="cb" id="cPay">TUTUP</button>
-</div>
-</div>
-
-<div class="md" id="sMd">
-<div class="mc">
-<h2 class="mt">SUPPORT</h2>
-<img src="https://files.catbox.moe/orwja1.png" alt="QRIS" class="mi">
-<p class="mp">TERIMAKASIH ATAS DUKUNGAN ANDA</p>
-<button class="cb" id="cSup">TUTUP</button>
-</div>
 </div>
 
 <script>
-// Elements
-const mBtn=document.getElementById('mBtn'),
-mMd=document.getElementById('mMd'),
-cMBtn=document.getElementById('cMBtn'),
-cBtn=document.getElementById('cBtn'),
-bBtn=document.getElementById('bBtn'),
-sBtn2=document.getElementById('sBtn2'),
-yBtn=document.getElementById('yBtn'),
-fBtn=document.getElementById('fBtn'),
-kMd=document.getElementById('kMd'),
-freeKeyMd=document.getElementById('freeKeyMd'),
-lMd=document.getElementById('lMd'),
-pMd=document.getElementById('pMd'),
-sMd=document.getElementById('sMd'),
-cPay=document.getElementById('cPay'),
-cSup=document.getElementById('cSup'),
-kInput=document.getElementById('kInput'),
-sKey=document.getElementById('sKey'),
-kMsg=document.getElementById('kMsg'),
-freeKeyInput=document.getElementById('freeKeyInput'),
-freeKeyBtn=document.getElementById('freeKeyBtn'),
-freeKeyMsg=document.getElementById('freeKeyMsg'),
-lProg=document.getElementById('lProg'),
-lTxt=document.getElementById('lTxt'),
-sBtn=document.getElementById('sBtn'),
-pInput=document.getElementById('pInput'),
-oSel=document.getElementById('oSel'),
-mainPage=document.getElementById('mainPage'),
-freePage=document.getElementById('freePage'),
-backBtn=document.getElementById('backBtn'),
-freeBtn=document.getElementById('freeBtn'),
-freeInput=document.getElementById('freeInput');
+const TRUE_PASSWORD='FAAUNBANWA2025';
+const splash=document.getElementById('splash');
+const navbar=document.getElementById('navbar');
+const homePage=document.getElementById('homePage');
+const tipsPage=document.getElementById('tipsPage');
+const pwInput=document.getElementById('passwordInput');
+const pwBtn=document.getElementById('pwBtn');
+const pwMsg=document.getElementById('pwMsg');
+const menuBtn=document.getElementById('menuBtn');
+const menu=document.getElementById('menu');
+const homeLink=document.getElementById('homeLink');
+const tipsLink=document.getElementById('tipsLink');
 
-// Valid keys
-const vK=['faamima12','faanewera34','faasaturn56','saturnnunban78'];
-const freeKey='faasaturn100subs';
+function showHome(){
+  homePage.style.display='block';
+  tipsPage.style.display='none';
+  menu.style.display='none';
+}
+function showTips(){
+  homePage.style.display='none';
+  tipsPage.style.display='block';
+  menu.style.display='none';
+}
 
-let currentPage='main';
+pwBtn.addEventListener('click',()=>{
+  const v=pwInput.value.trim();
+  if(v===TRUE_PASSWORD){
+    splash.style.display='none';
+    navbar.style.display='flex';
+    showHome();
+  }else{
+    pwMsg.textContent='Password salah — coba lagi.';
+  }
+});
+pwInput.addEventListener('keydown',e=>{if(e.key==='Enter')pwBtn.click();});
 
-// Menu functionality
-mBtn.onclick=()=>mMd.style.display='flex';
-cMBtn.onclick=()=>mMd.style.display='none';
-cBtn.onclick=()=>window.open('https://t.me/IsRealFaa','_blank');
-bBtn.onclick=()=>{mMd.style.display='none';pMd.style.display='flex'};
-sBtn2.onclick=()=>{mMd.style.display='none';sMd.style.display='flex'}};
-fBtn.onclick=()=>{
-    mMd.style.display='none';
-    mainPage.style.display='none';
-    freePage.style.display='block';
-    currentPage='free';
-};
-backBtn.onclick=()=>{
-    freePage.style.display='none';
-    mainPage.style.display='block';
-    currentPage='main';
-};
-cPay.onclick=()=>pMd.style.display='none';
-cSup.onclick=()=>sMd.style.display='none';
+menuBtn.addEventListener('click',()=>menu.style.display=menu.style.display==='flex'?'none':'flex');
+homeLink.addEventListener('click',showHome);
+tipsLink.addEventListener('click',showTips);
 
-// Key validation for main
-sKey.onclick=()=>{
-const eK=kInput.value.trim();
-if(vK.includes(eK)){
-    kMsg.innerHTML='<span style="color:#25D366">KEY BENAR!</span>';
+// Form Unban
+const nameEl=document.getElementById('name');
+const phoneEl=document.getElementById('phone');
+const bandEl=document.getElementById('bandOption');
+const sendBtn=document.getElementById('sendBtn');
+const feedback=document.getElementById('feedback');
+const clearBtn=document.getElementById('clearBtn');
+
+function normalizePhone(raw){
+  if(!raw)return null;
+  let s=raw.replace(/[\s()-]/g,'');
+  if(/^0[0-9]+$/.test(s))s='+62'+s.slice(1);
+  if(/^62[0-9]+$/.test(s))s='+'+s;
+  if(/^\+[0-9]+$/.test(s))return s;
+  return null;
+}
+
+sendBtn.addEventListener('click',()=>{
+  const nama=nameEl.value.trim();
+  const num=normalizePhone(phoneEl.value.trim());
+  if(!nama){
+    feedback.style.display='block';
+    feedback.style.color='#f87171';
+    feedback.textContent='Nama tidak boleh kosong.';
+    return;
+  }
+  if(!num){
+    feedback.style.display='block';
+    feedback.style.color='#f87171';
+    feedback.textContent='Nomor WhatsApp tidak valid.';
+    return;
+  }
+  feedback.style.display='block';
+  feedback.style.color='#0ef';
+  feedback.textContent='Menyiapkan email banding...';
+  const band=bandEl.value;
+  const subject=`Permohonan Banding Pemblokiran Akun WhatsApp (${num})`;
+  let bodyText='';
+  if(band==='permanen'){
+    bodyText=`Halo Tim WhatsApp,
+
+Saya ingin mengajukan banding atas pemblokiran permanen terhadap akun WhatsApp saya dengan nomor ${num}. Saya yakin bahwa pemblokiran ini terjadi karena kesalahpahaman atau sistem yang salah mendeteksi aktivitas akun saya.
+
+Saya menggunakan akun ini hanya untuk berkomunikasi dengan keluarga, teman, dan keperluan pribadi/bisnis kecil. Saya selalu berusaha mengikuti Ketentuan Layanan dan Kebijakan WhatsApp. Mohon untuk meninjau kembali kasus saya dan mempertimbangkan untuk mengaktifkan kembali akun tersebut.
+
+Terima kasih atas perhatian dan kerja samanya. Saya sangat berharap akun saya bisa dipulihkan.
+
+Hormat saya,
+${nama}
+Nomor WhatsApp: ${num}`;
+  }else{
+    bodyText=`Halo Tim WhatsApp,
+
+Saya ingin mengajukan permohonan peninjauan atas pemblokiran sementara pada akun WhatsApp saya dengan nomor ${num}. Saya baru menyadari bahwa akun saya tidak dapat digunakan untuk sementara waktu, dan saya mohon maaf jika ada aktivitas yang dianggap melanggar kebijakan WhatsApp.
+
+Saya berkomitmen untuk mematuhi seluruh Ketentuan Layanan dan tidak akan menggunakan aplikasi modifikasi atau fitur yang tidak resmi di masa mendatang. Mohon kiranya tim dapat meninjau kembali dan memulihkan akun saya agar bisa digunakan seperti semula.
+
+Terima kasih atas perhatian dan pengertiannya.
+
+Hormat saya,
+${nama}
+Nomor WhatsApp: ${num}`;
+  }
+
+  const mailto=`mailto:support@support.whatsapp.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyText)}`;
+  setTimeout(()=>{
+    window.location.href=mailto;
     setTimeout(()=>{
-        kMd.style.display='none';
-        sL();
-    },500);
-}else{
-    kMsg.innerHTML='<span style="color:#f33">KEY SALAH!</span>';
-    kInput.value='';
-}
-};
+      nameEl.value='';
+      phoneEl.value='';
+      bandEl.value='permanen';
+      feedback.style.display='none';
+    },2000);
+  },1000);
+});
 
-// Key validation for free
-freeKeyBtn.onclick=()=>{
-const eK=freeKeyInput.value.trim();
-if(eK===freeKey){
-    freeKeyMsg.innerHTML='<span style="color:#25D366">KEY BENAR!</span>';
-    setTimeout(()=>{
-        freeKeyMd.style.display='none';
-        sL();
-    },500);
-}else{
-    freeKeyMsg.innerHTML='<span style="color:#f33">KEY SALAH!</span>';
-    freeKeyInput.value='';
-}
-};
-
-// Send appeal main
-sBtn.onclick=()=>{
-const pN=pInput.value,oV=oSel.value;
-if(!pN||!oV){alert('Harap isi nomor WhatsApp dan pilih opsi!');return}
-kMd.style.display='flex';
-};
-
-// Send appeal free
-freeBtn.onclick=()=>{
-const pN=freeInput.value;
-if(!pN){alert('Harap isi nomor WhatsApp!');return}
-freeKeyMd.style.display='flex';
-};
-
-// Loading function
-function sL(){
-lMd.style.display='flex';
-let p=0;
-const i=setInterval(()=>{
-    p+=1;
-    lProg.style.width=p+'%';
-    lTxt.textContent='Memproses... '+p+'%';
-    if(p>=100){
-        clearInterval(i);
-        setTimeout(()=>{
-            lMd.style.display='none';
-            if(currentPage==='main') sE();
-            else sFE();
-        },500);
-    }
-},50);
-}
-
-// Send email main
-function sE(){
-const pN=pInput.value,oV=oSel.value;
-let to='',sub='',bod='';
-switch(oV){
-    case'1':to='support@support.whatsapp.com';sub='Appeal for WhatsApp Account';bod=`Greetings, WhatsApp support team. Let me introduce myself (VALL). I would like to request assistance. My account may have been permanently blocked 24-1 hour ago. I would like to request that it be unlocked within 1-6 hours as soon as possible. I would like to appeal my WhatsApp number https://wa.me/${pN} for violating the terms of service. I apologize https://www.whatsapp.com/legal/terms-of-service?lang=id_ID without realizing it. I apologize for my behavior with the WhatsApp application because it violated WhatsApp's privacy policy https://www.whatsapp.com/legal/privacy-policy?lang=id_ID https://faq.whatsapp.com/465883178708358?locale=id_ID I need this number for work and to contact a sick family member. I would like to ask for your assistance. Thank you for your help. I hope the appeal process for my account goes smoothly. Regards. I am [VALL]`;break;
-    case'2':to='faq@support.whatsapp.com,iphone@support.whatsapp.com,android@support.whatsapp.com,help@support.whatsapp.com,account-recovery@whatsapp.com';sub='Account Block Appeal';bod=`Hello respected whatsapp support team, I am one of your whatsapp messenger and business application users, In the past few days I have experienced what is called blocking my whatsapp account ${pN}, Which started from spam blocking and became a permanent block and I don't know why my account continues to be blocked, Previously I have followed all the rules and privacy policies of whatsapp and why my account can be blocked continuously which results in my whatsapp being permanently blocked ????, Please the whatsapp support team to immediately check my activity and immediately lift the block on my account. Thank you`;break;
-    case'3':to='appeals@support.whatsapp.com,android@support.whatsapp.com,iphone@support.whatsapp.com,support@support.whatsapp.com,support@whatsapp.com,fa@support.whatsapp.com,banned-accounts@whatsapp.com';sub='طلب استئناف لحساب واتساب';bod=`تحية طيبة إلى فريق واتساب والمطور مارك زوكربيرغ المحترمين،
-
-أكتب هذه الرسالة بآمال كبيرة بأن تقوموا بمراجعة حالة حسابي على واتساب الذي تم حظره بشكل دائم لأكثر من شهرين. أنا أدرك تمامًا أهمية استخدام التطبيق وفقًا للسياسات المعتمدة، وإذا كان قد حدث أي خطأ غير مقصود مني، فأنا أقدم خالص اعتذاري.
-
-رقم حسابي:
-[https://www.whatsapp.com/contact/?subject=${pN}@support.whatsapp.com]
-
-يُعد واتsاب وسيلة الاتصال الأساسية بالنسبة لي، سواء للأغراض الشخصية أو العائلية أو المهنية. وخلال فترة الحظر، واجهت صعوبات كثيرة في التواصل مع الأشخاص المهمين. لذلك، أرجو منكم النظر بعين الاعتبار في إعادة تفعيل حسابي.
-
-لقد قرأت وفهمت شروط خدمة واتساب الرسمية والمذكورة في الروابط التالية:
-[https://www.whatsapp.com/legal/terms-of-service] +
-[https://faq.whatsapp.com/361005896189245/?helpref=uf_share] +
-[https://faq.whatsapp.com/1095301557782068/?helpref=uf_share]
-
-وأنا على استعداد تام للالتزام بجميع القواعد والسياسات في المستقبل، وأتعهد بعدم تكرار أي مخالفة. أرجو منكم التفهم والنظر في حالتي بعين الرحمة، وأتمنى دعم المطور والفريق المسؤول.
-
-شكرًا لكم على وقتكم واهتمامكم. آمل بشدة أن أحصل على رد إيجابي قريبًا.
-
-مع خالص الاحترام،`;break;
-    case'4':to='support@support.whatsapp.com';sub=`Solicitud de revisión manual – Cuenta de WhatsApp suspendida (${pN})`;bod=`Estimado equipo de soporte de WhatsApp y Meta AI,
-
-Espero que este mensaje les encuentre bien. Mi cuenta de WhatsApp con el número ${pN} ha estado suspendida durante aproximadamente tres semanas, y solicito amablemente una revisión manual detallada de este caso.
-
-Pido disculpas sinceras si en algún momento se produjeron actividades no intencionales desde mi cuenta que pudieron haber sido detectadas como una violación de los Términos de Servicio de WhatsApp. Les aseguro que nunca fue mi intención infringir las reglas. Respeto profundamente las políticas de WhatsApp y me comprometo plenamente a cumplirlas en el futuro.
-
-Esta cuenta es muy importante para mí, ya que la utilizo para la comunicación diaria con mi familia y para responsabilidades profesionales. La suspensión prolongada me ha causado serias dificultades, por lo que les ruego su ayuda para restaurar mi acceso lo antes ممكن.
-
-Agradezco de antemano su tiempo y consideración en revisar esta apelación. Muchas gracias por su colaboración y apoyo.
-
-Atentamente,  
-Fierlyy Arkane  
-Número de WhatsApp: ${pN}`;break;
-    case'5':to='android@support.whatsapp.com,support@support.whatsapp.com,iphone@support.whatsapp.com,smb@support.whatsapp.com,accessibility@support.whatsapp.com';sub='Solicitud de restablecimiento de OTP para cuenta de WhatsApp';bod=`Estimado equipo de soporte de WhatsApp,
-
-Mi nombre es Laura Fernández y solicito amablemente el restablecimiento del código OTP de mi cuenta vinculada al número ${pN}. No he podido recibir el código y necesito acceso urgente a mi cuenta para continuar con mis actividades diarias.
-
-Agradezco de antemano su rápida atención a este asunto.`;break;
-}
-window.location.href=`mailto:${to}?subject=${encodeURIComponent(sub)}&body=${encodeURIComponent(bod)}`;
-}
-
-// Send email free
-function sFE(){
-const pN=freeInput.value;
-const to='support@support.whatsapp.com';
-const subject='Richiesta di sblocco account WhatsApp';
-const body=`Ciao buon pomeriggio, caro team di WhatsApp, sono un utente WhatsApp che utilizza WhatsApp da molto tempo con il numero ${pN}, ho un problema con il mio account WhatsApp che non posso più utilizzare WhatsApp perché qualcuno irresponsabile ha violato il mio Account WhatsApp per azioni illegali. Quindi è stato rilevato che il mio account WhatsApp ha commesso un atto illegale. Ho davvero bisogno del mio account WhatsApp per il mio lavoro d'ufficio perché c'è una riunione importante di cui discutere in questa riunione, quindi ho davvero bisogno di quel numero di poter avere notizie dell'incontro di oggi lo chiedo potete aiutarmi, grazie al team di Whatsapp.`;
-
-window.location.href=`mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-}
+clearBtn.addEventListener('click',()=>{
+  nameEl.value='';
+  phoneEl.value='';
+  bandEl.value='permanen';
+  feedback.style.display='none';
+});
 </script>
 </body>
-  </html>
+</html>
